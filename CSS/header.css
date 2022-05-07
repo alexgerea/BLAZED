@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Open+Sans&family=Oswald:wght@500&family=Roboto:ital,wght@0,400;0,700;1,700&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* All form inputs have an accent color*/
+input{
+    accent-color: orange;
+}
+
+/* Header */
+header
+{
+    position:sticky;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+    padding: 0px 90px;
+    background: rgb(40, 40, 40);
+    box-shadow: 0 3px 0 rgb(81, 81, 81);
+    z-index: 1;
+}
+
+header .logo
+{
+    filter: invert(100%);
+    width: 100px;
+    margin-top:3px;
+    margin-right:10px;
+    transition: all 0.3s ease 0s;
+}
+
+header .logo:hover
+{
+    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(0deg) brightness(119%) contrast(119%);
+    transition: all 0.3s ease 0s;
+}
+
+header .navigation
+{
+    display:flex;
+    flex-wrap:wrap;
+    margin: 10px 0;
+    font-family: 'Koulen', cursive;
+    font-size: 1.3rem;
+    letter-spacing:0.05rem;
+    margin-right:auto;
+}
+
+header .navigation li
+{
+    list-style:none;
+    margin: 0 10px;
+}
+
+header .navigation li a
+{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease 0s;
+}
+
+header .navigation li a:hover
+{
+    color: rgb(255, 106, 0);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease 0s;
+}
+
+header button
+{
+    all: unset;
+}
+
+header .icons
+{
+    margin-top:3px;
+    color: #fff;
+    font-size: 1.4rem;
+    display:flex;
+    gap: 20px;
+    transition: all 0.3s ease 0s;
+}
+
+header .icons i{
+    transition: color 0.3s ease 0s;
+}
+
+header .icons i:hover
+{
+    color: rgb(255, 106, 0);
+    transition: all 0.3s ease 0s;
+}
+
+.hamburger
+{
+    margin-left:20px;
+    display:none;
+    cursor:pointer;
+}
+
+.bar
+{
+    display:block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+.dropdown.active > .link + .dropdown-menu{
+    opacity: 1;
+    transform: TranslateY(0);
+    pointer-events:auto;
+}
+
+.dropdown.active > button,
+.link:hover{
+    color: rgb(255, 106, 0);
+}
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-menu{
+    color:white;
+    position:absolute;
+    left:-9rem;
+    top:calc(100% + 1rem);
+    background-color: black;
+    padding: .75rem;
+    border-radius: .25rem;
+    box-shadow: 0px 0px 0px 2px rgb(95, 95, 95);
+    opacity:0;
+    pointer-events:none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+.dropdown-menu.user{
+    font-family: 'Roboto', sans-serif;
+    font-size:1.3rem;
+}
+
+.dropdown-menu.cart{
+    font-family: 'Roboto', sans-serif;
+    font-size:1.3rem;
+}
+
+.dropdown.active > .link + .dropdown-menu{
+    opacity: 1;
+    transform: TranslateY(0);
+    pointer-events:auto;
+}
+
+.dropdown.active > button,
+.link:hover{
+    color: rgb(255, 106, 0);
+}
+
+header .icons .search-input{
+    display:grid;
+    grid-template-columns: repeat(2,max-content);
+}
+
+header .icons .popup-search-input{
+    width:250px;
+    height:30px;
+    background:none;
+    border:none;
+    font-size:17px;
+    color:white;
+    padding:10px;
+}
+
+header .icons .popup-search-input:focus{
+    outline:none;
+}
+
+header .icons .popup-search-button {
+    font-size:22px;
+}
+
+header .icons a:link, a:visited, a:active{
+    color:white;
+}
+
+.login-form .login-title{
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.login-form label{
+    margin: 0px 0px 100px 10px;
+}
+
+.login-form input{
+    background:rgba(255, 255, 255, 0.158);
+    color:white;
+    border-radius:10px;
+    font-size:1.2rem;
+    padding:10px;
+    margin-top:6px;
+    margin-bottom:10px;
+}
+
+.login-form input:focus{
+    outline:none;
+}
+
+.login-form .startexploring{
+    display:block;
+    margin: 5px auto;
+    padding: 0px 0px 10px 0px;
+    width:80px;
+    height:30px;
+    font-size:1.5rem;
+}
+
+.login-form .register-link{
+    text-align:center;
+    color:grey;
+    font-size:1rem;
+}
+
+.login-form a:link, a:visited, a:active{
+    text-decoration:none;
+    color:rgb(199, 199, 199);
+    transition: 0.3s;
+}
+
+.login-form a:hover{
+    color:orange;
+    transition: 0.3s;
+}
+
+.error{
+    border-radius:10px;
+    background: rgba(255, 0, 0, 0.731);
+    color:white;
+    padding:10px;
+    width:100%;
+    margin-bottom:7px;
+}
+
+.error{
+    border-radius:10px;
+    background: rgba(255, 0, 0, 0.731);
+    color:white;
+    padding:10px;
+    width:100%;
+    margin-bottom:7px;
+}
+
+.alert{
+    border-radius:10px;
+    background: rgba(128, 128, 128, 0.865);
+    color:white;
+    padding:10px;
+    width:100%;
+    margin-bottom:7px;
+}
+
+.success{
+    border-radius:10px;
+    background: rgba(51, 255, 0, 0.667);
+    color:white;
+    padding:10px;
+    width:100%;
+    margin-bottom:7px;
+}
+
+.logged-in-wrap{
+    width:200px;
+}
+
+.logged-in-wrap a:link, a:visited, a:active{
+    text-decoration:none;
+    font-size:1.1rem;
+    color:rgb(199, 199, 199);
+    transition: 0.3s;
+}
+
+.logged-in-wrap a:hover{
+    color:orange;
+    transition: 0.3s;
+}
+
+.startexploring{
+    height:60px;
+    width:300px;
+    margin-top: 20px;
+    display:inline-block;
+    color:white;
+    border:black;
+    background-color:rgb(255, 132, 0);
+    padding: 0.5rem 0rem;
+    border-radius: 16px;
+    text-align:center;
+    font-family: 'Koulen', cursive;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px #000000;
+    transition: 0.3s;
+}
+
+.startexploring:hover{
+    background-color:rgb(224, 116, 0);
+    transition: 0.3s;
+    
+}
+
+.shopinfo{
+    width:200px;
+}
+
+.shopinfo .shop-title{
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.shopinfo .shoptxt{
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.shopinfo .startexploring{
+    display:block;
+    margin: 5px auto;
+    padding: 0px 0px 10px 0px;
+    width:80px;
+    height:30px;
+    font-size:1.5rem;
+}
+
+.shopinfo .startexploring a{
+    text-decoration:none;
+    color:white;
+}
+
+@media(max-width:1037px)
+{
+    header{
+        padding:0px 60px;
+    }
+
+    header .navigation{
+        font-size:1rem;
+    }
+
+    .dropdown-menu.user{
+        left:-14rem;
+    }
+}
+
+@media(max-width:768px)
+{
+    header{
+        justify-content:space-between;
+        padding: 10px 10px;
+    }
+
+    header .logo{
+        margin-left:0px;
+    }
+
+    header .icons{
+        margin-left:auto;
+    }
+
+    header .hamburger{
+        display:block;
+    }
+
+    header .hamburger.active .bar:nth-child(2){
+        opacity:0;
+    }
+
+    header .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    header .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    header .navigation{
+        position:fixed;
+        left:+101%;
+        top:45px;
+        gap:0;
+        flex-direction:column;
+        background-color:rgb(40, 40, 40);
+        width: 100%;
+        text-align:center;
+        box-shadow: 0px 0px 0px 2px rgb(95, 95, 95);
+        transition:0.3s;
+        font-size: 1.3rem;
+    }
+
+    header .navigation .li
+    {
+        margin:16px 0;
+    }
+
+    header .navigation.active{
+        left:0;
+    }
+
+    .dropdown-menu{
+        left:-11rem;
+    }
+
+    .dropdown-menu.search{
+        left:-10rem;
+    }
+
+    .dropdown-menu.user{
+        left:-13.1rem;
+    }
+}

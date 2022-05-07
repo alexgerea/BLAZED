@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Open+Sans&family=Oswald:wght@500&family=Roboto:ital,wght@0,400;0,700;1,700&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:black;
+    color:white;
+}
+
+/* Exemple de produse */
+.prodcontainercanvas{
+    padding:20px 0;
+    background-color:black;
+    height:auto;
+    min-height:400px;
+}
+
+.prodcontainercanvas .prodcontainertext{
+    color:white;
+    text-align:center;
+    font-family: 'Koulen', cursive;
+    font-size:40px;
+}
+
+.prodcontainer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    max-width:1200px;
+    margin: 0px auto;
+}
+
+.box{
+    flex:1 1 300px;
+    background: #000000;
+    border:1px solid rgba(0, 0, 0, 0.3);
+    position:relative;
+    overflow:hidden;
+    margin:20px;
+    border-radius:20px;
+    box-shadow: 0 3px 18px rgb(81, 81, 81);
+    transition: box-shadow 0.3s ease 0s;
+    max-width:350px;
+    cursor:pointer;
+}
+
+.box:hover{
+    box-shadow: 0 3px 18px rgba(255, 72, 0, 0.7);
+    transition: box-shadow 0.3s ease 0s;
+}
+
+.box .image{
+    padding:10px;
+    background:#000000;
+    text-align:center;
+}
+
+.box .image img{
+    height:250px;
+    width: 250px;
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.527));
+}
+
+.box .info .title{
+    padding:10px;
+    color:white;
+    font-family: 'Oswald', sans-serif;
+    font-size:25px;
+}
+
+.box .info .subinfo{
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 10px;
+}
+
+.box .info .subinfo .price{
+    font-family: 'Oswald', sans-serif;
+    font-size:1.5rem;
+    color: #ff5e00;
+}
+
+.box .info .subinfo .price span{
+    margin-left:3px;
+    font-size:1rem;
+    color:#fff;
+    text-decoration:line-through;
+    text-decoration-thickness:0.2px;
+}
+
+.add{
+    all:unset;
+    margin-top:10px;
+    width:200px;
+    border-radius:30px;
+    background-color:orange;
+    font-family: 'Koulen', cursive;
+    font-size: 2rem;
+    color:white;
+    text-align:center;
+    text-shadow: 1px 1px 3px #000000;
+}
+
+.add:hover{
+    background-color:rgb(224, 116, 0);
+    transition: 0.3s;
+}
+
+.searchnotfound{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+}

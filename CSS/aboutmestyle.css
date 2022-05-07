@@ -1,0 +1,77 @@
+body{
+    background-color:black;
+}
+
+.blazedcanvas{
+    max-width:800px;
+    height:350px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-image: url('../Imagini/About me/Blazed canvas.png');
+    background-position:center;
+    background-size:cover;
+    margin:0px auto;
+}
+
+.blazedlogo{
+    height:150px;
+    filter: invert(100%) drop-shadow(0px 0px 8px rgba(0,0,0,1));
+}
+
+h1{
+    margin-top:20px;
+    text-align:center;
+    font-family:Koulen, sans-serif;
+    color:white;
+}
+
+p{
+    text-align:center;
+    margin:0px auto;
+    max-width:500px;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    font-size:1.4rem;
+}
+
+.highlight{
+    color:orange;
+    font-weight:bold;
+}
+
+.contact{
+    margin:20px 10px 50px 10px;
+    text-align:center;
+}
+
+.contact button{
+    all:unset;
+    display:inline-block;
+    height:50px;
+    width:130px;
+    border-radius:30px;
+    color:white;
+    font-family:Koulen, sans-serif;
+    font-size:30px;
+    text-align:center;
+    background-color:rgb(44, 44, 44);
+    transition: background-color 0.3s ease-in-out 0s;
+
+}
+
+.contact button:hover{
+    background-color:rgb(255, 98, 0);
+    transition: background-color 0.3s ease-in-out 0s;
+}
+
+@media (max-width:768px)
+{
+    .blazedlogo{
+        height:100px;
+    }
+
+    p{
+        padding:0px 30px;
+    }
+}

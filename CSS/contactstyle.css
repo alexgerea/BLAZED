@@ -1,0 +1,204 @@
+body{
+    background-color:black;
+}
+
+.formwrap{
+    padding:0px 20px;
+    margin:0px auto;
+    max-width:800px;
+}
+
+h1{
+    margin-top:50px;
+    color:orange;
+    font-family:Koulen,sans-serif;
+    font-size:4rem;
+    text-align:center;
+    line-height:60px;
+}
+
+h2{
+    margin-top:1px;
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+    font-size:1.2rem;
+    text-align:center;
+    line-height:25px;
+}
+
+.delaccinfo{
+    margin-top:2rem;
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+    font-size:1.2rem;
+    text-align:center;
+}
+
+.errorf{
+    margin-top:30px;
+    background-color:rgb(193, 0, 0);
+    color:white;
+    padding:10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size:1rem;
+}
+
+.startexploring a{
+    text-decoration:none;
+    color:white;
+}
+
+.label{
+    margin-top:30px;
+    color:white;
+    font-size:2rem;
+    line-height:40px;
+}
+
+.numef, .prenumef, .emailf, .oldpasswordf, .passwordf, .passwordfv, .email[type=email]{
+    margin:4px;
+    width:100%;
+    border:3px solid gray;
+    font-size:1.5rem;
+    padding: 12px 20px;
+    box-shadow: 0 3px 18px rgb(81, 81, 81);
+    -webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-ms-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+}
+
+.numef:hover, .prenumef:hover, .emailf:hover, .oldpasswordf:hover, .passwordf:hover, .passwordfv:hover, .email[type=email]:hover{
+    border:3px solid rgb(255, 89, 0);
+    box-shadow: 0 3px 30px rgb(255, 162, 0);
+}
+
+.numef:focus, .prenumef:focus, .emailf:focus, .oldpasswordf:focus, .passwordf:focus, .passwordfv:focus, .email[type=email]:focus{
+    background-color:rgb(244, 244, 244);
+    border:3px solid rgb(255, 89, 0);
+    box-shadow: 0 3px 30px rgb(255, 162, 0);
+    outline:none;
+    transition: all .2s ease-out;
+}
+
+textarea{
+    margin:4px;
+    width:100%;
+    border:3px solid gray;
+    font-size:1.5rem;
+    padding: 12px 20px;
+    outline:none;
+    resize:none;
+    font-family:Arial;
+    box-shadow: 0 3px 18px rgb(81, 81, 81);
+    -webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-ms-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+}
+
+textarea:hover{
+    border:3px solid rgb(255, 89, 0);
+    box-shadow: 0 3px 30px rgb(255, 162, 0);
+}
+
+textarea:focus{
+    border:3px solid rgb(255, 89, 0);
+    box-shadow: 0 3px 30px rgb(255, 162, 0);
+}
+
+
+input[type=submit]{
+    all:unset;
+    display:inline-block;
+    height:50px;
+    width:130px;
+    border-radius:30px;
+    margin:30px;
+    color:white;
+    font-family:Koulen, sans-serif;
+    font-size:30px;
+    text-align:center;
+    background-color:rgb(44, 44, 44);
+    transition: background-color 0.3s ease-in-out 0s;
+}
+
+input[type=submit]:hover{
+    background-color: rgb(255, 106, 0);
+    transition: background-color 0.3s ease-in-out 0s;
+}
+
+select{
+    margin-top:5px;
+    width:100%;
+    padding: 1em 1.5em;
+    font-size: 1rem;
+    outline:none;
+    border: 3px solid gray;
+    -webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-ms-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+}
+
+select:hover{
+    box-shadow: 0 3px 30px rgb(255, 162, 0);
+}
+
+select:focus{
+    box-shadow: 0 3px 30px rgb(255, 162, 0);
+}
+
+.message{
+    height:300px;
+}
+
+.stars{
+    display:flex;
+    color:white;
+    justify-content: center;
+}
+
+.stars a{
+    opacity:50%;
+    font-size:2rem;
+    cursor:pointer;
+    padding:5px;
+}
+
+.stars:hover a{
+    opacity:100%;
+    color:orange;
+}
+
+.stars a.active{
+    opacity: 100%;
+    color:orange;
+}
+
+.stars.disabled{
+    pointer-events:none;
+}
+
+.stars a:hover ~ a {
+    opacity:50%;
+    color:white;
+}
+
+@media (max-width:768px)
+{
+    h1{
+        font-size:2.5rem;
+    }
+
+    .email input[type=text]{
+        font-size:1rem;
+    }
+
+    select{
+        font-size: 0.9rem;
+    }
+}

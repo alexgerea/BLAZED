@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Open+Sans&family=Oswald:wght@500&family=Roboto:ital,wght@0,400;0,700;1,700&display=swap');
+
+/* Footer */
+footer{
+    background: #111;
+    height:auto;
+    width:100%;
+    font-family: 'Open Sans', sans-serif;
+    padding-top:40px;
+    color: #fff;
+}
+
+.footer-content{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align: center;
+}
+
+.footer-content .blazedest{
+    filter: invert(100%);
+    margin-bottom: 10px;
+}
+
+.footer-content p{
+    max-width:500px;
+    margin:10px auto;
+    line-height: 28px;
+    font-size:16px;
+}
+
+.socials{
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+    margin: 0 10px;
+}
+
+.socials a{
+    text-decoration:none;
+    color:white;
+}
+
+.socials a i{
+    font-size:1.4rem;
+    transition: color 0.3s ease 0s;
+}
+
+.socials a:hover i{
+    color:orange;
+    transition: color 0.3s ease 0s;
+}
+
+.footer-bottom{
+    background: rgb(24, 24, 24);
+    width:100%;
+    padding:20px 0;
+    text-align:center;
+}
+
+.footer-bottom p{
+    font-size:15px;
+}
+
+.footer-bottom .love{
+    color:red;
+}
+
+.footer-bottom .Stinray{
+    color:rgb(255, 128, 0)
+}
