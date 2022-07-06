@@ -1,4 +1,4 @@
-**BLAZED** is a Web App Shop for Computer Parts
+**BLAZED** is a Web Shop App for Computer Parts
 
 **Requirements:** Server running Apache and MySQL
 
