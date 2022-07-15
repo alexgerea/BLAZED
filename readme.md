@@ -1,6 +1,6 @@
 **BLAZED** is a Web Shop App for Computer Parts
 
-**Requirements:** Server running Apache and MySQL
+**Requirements:** Server running Apache, PHP and MySQL
 
 **Features:**
 - Responsive Design
