@@ -2,7 +2,7 @@
     require_once('../Scripturi/Produse/createprod.php');
     require_once('../Scripturi/Produse/component.php');
     // Cream o instanta a clasei CreareDb
-    $tabel = new CreareProduse("BLAZED","produse");
+    $tabel = new CreareProduse("blazed","produse");
 
     if(isset($_POST['add'])){
         if(!isset($_SESSION['id']))
