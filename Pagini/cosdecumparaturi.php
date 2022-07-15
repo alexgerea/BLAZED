@@ -1,7 +1,7 @@
 <?php session_start();
     require_once('../Scripturi/Produse/createprod.php');
     require_once('../Scripturi/Produse/component.php');
-    $tabel = new CreareProduse("BLAZED","produse");
+    $tabel = new CreareProduse("blazed","produse");
 
     if(isset($_POST['remove'])){
         if($_GET['action']=='remove'){
