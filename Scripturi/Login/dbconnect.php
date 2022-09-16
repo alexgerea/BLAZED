@@ -30,7 +30,7 @@ catch(mysqli_sql_exception $e){
         echo "Nu se poate crea tabelul pentru utilizatori!";
             exit();
     }else{
-        header("Location: index.php?success=A fost creata baza de date BLAZED");
+        header("Location: index?success=A fost creata baza de date BLAZED");
     }
 }
 

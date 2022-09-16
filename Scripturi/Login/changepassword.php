@@ -14,20 +14,20 @@ if(isset($_SESSION['id']) && isset($_SESSION['nume'])){
         $validatenewpassword = validate($_POST['passwordfv']);
 
         if(empty($oldpassword)){
-            header("Location: ../../Pagini/schimbaparola.php?errorf=Introduceti parola veche...");
+            header("Location: ../../Pagini/schimbaparola?errorf=Introduceti parola veche...");
             exit();
         }else if(empty($newpassword)){
-            header("Location: ../../Pagini/schimbaparola.php?errorf=Introduceti parola noua");
+            header("Location: ../../Pagini/schimbaparola?errorf=Introduceti parola noua");
             exit();
         }else if($newpassword !== $validatenewpassword){
-            header("Location: ../../Pagini/schimbaparola.php?errorf=Introduceti parola noua corect in ambele casete");
+            header("Location: ../../Pagini/schimbaparola?errorf=Introduceti parola noua corect in ambele casete");
             exit();
         }
         else
         {
             if($oldpassword === $newpassword)
             {
-                header("Location: ../../Pagini/schimbaparola.php?errorf=Parola veche si cea noua coincid!");
+                header("Location: ../../Pagini/schimbaparola?errorf=Parola veche si cea noua coincid!");
                 exit();
             }
             $oldpassword = md5($oldpassword);
@@ -45,21 +45,21 @@ if(isset($_SESSION['id']) && isset($_SESSION['nume'])){
                 $result2 = mysqli_query($connection,$sql2);
                 session_unset();
                 session_destroy();
-                header("Location: ../../index.php?success=Parola a fost schimbata cu succes!");
+                header("Location: ../../?success=Parola a fost schimbata cu succes!");
                 exit();
             }else{
-                header("Location: ../../Pagini/schimbaparola.php?errorf=Parola veche este incorecta");
+                header("Location: ../../Pagini/schimbaparola?errorf=Parola veche este incorecta");
                 exit();
             }
         }
     }
     else{
-        header("Location: ../../Pagini/schimbaparola.php?errorf=Introduceti parola veche si cea noua!");
+        header("Location: ../../Pagini/schimbaparola?errorf=Introduceti parola veche si cea noua!");
         exit();
     }
 }
 else{
-    header("Location: ../../Pagini/schimbaparola.php?errorf=da");
+    header("Location: ../../Pagini/schimbaparola?errorf=da");
     exit();
 }
 ?>

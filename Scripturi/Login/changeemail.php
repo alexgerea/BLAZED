@@ -15,16 +15,16 @@ if(isset($_SESSION['id']) && isset($_SESSION['nume'])){
         $pass = validate($_POST['passwordf']);
 
         if(empty($newmail)){
-            header("Location: ../../Pagini/schimbaemail.php?errorf=Introduceti mailul nou...");
+            header("Location: ../../Pagini/schimbaemail?errorf=Introduceti mailul nou...");
             exit();
         }else if(empty($validatenewmail)){
-            header("Location: ../../Pagini/schimbaemail.php?errorf=Introduceti mailul nou...");
+            header("Location: ../../Pagini/schimbaemail?errorf=Introduceti mailul nou...");
             exit();
         }else if($newmail !== $validatenewmail){
-            header("Location: ../../Pagini/schimbaemail.php?errorf=Introduceti mailul nou corect in ambele casete");
+            header("Location: ../../Pagini/schimbaemail?errorf=Introduceti mailul nou corect in ambele casete");
             exit();
         }else if($oldmail == $newmail){
-            header("Location: ../../Pagini/schimbaemail.php?errorf=Mail-ul nou coincide cu cel vechi...");
+            header("Location: ../../Pagini/schimbaemail?errorf=Mail-ul nou coincide cu cel vechi...");
             exit();
         }
         else
@@ -49,26 +49,26 @@ if(isset($_SESSION['id']) && isset($_SESSION['nume'])){
                     $result2 = mysqli_query($connection,$sql2);
                     session_unset();
                     session_destroy();
-                    header("Location: ../../index.php?success=Mail-ul a fost schimbat cu succes!");
+                    header("Location: ../../?success=Mail-ul a fost schimbat cu succes!");
                     exit();
                  }else{
-                    header("Location: ../../Pagini/schimbaemail.php?errorf=Eroare la Database...");
+                    header("Location: ../../Pagini/schimbaemail?errorf=Eroare la Database...");
                    exit();
               }
             }
             else{
-                header("Location: ../../Pagini/schimbaemail.php?errorf=Parola este gresita!");
+                header("Location: ../../Pagini/schimbaemail?errorf=Parola este gresita!");
                 exit();
             }
         }
     }
     else{
-        header("Location: ../../Pagini/schimbaemail.php?errorf=Introduceti mailul nou...");
+        header("Location: ../../Pagini/schimbaemail?errorf=Introduceti mailul nou...");
         exit();
     }
 }
 else{
-    header("Location: ../../Pagini/schimbaemail.php?errorf=da");
+    header("Location: ../../Pagini/schimbaemail?errorf=da");
     exit();
 }
 ?>

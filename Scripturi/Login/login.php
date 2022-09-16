@@ -13,10 +13,10 @@ include "dbconnect.php";
         $pass = validate($_POST['password']);
 
         if(empty($email)){
-            header("Location: ../../index.php?error=Emailul este necesar");
+            header("Location: ../../?error=Emailul este necesar");
             exit();
         }else if(empty($pass)){
-            header("Location: ../../index.php?error=Parola este necesara");
+            header("Location: ../../?error=Parola este necesara");
             exit();
         }else{
             $pass=md5($pass);
@@ -36,22 +36,22 @@ include "dbconnect.php";
                         setcookie("numeb",$row['nume'],time()+60*60*24*6004,'/','localhost');
                         setcookie("idb",$row['id'],time()+60*60*24*6004,'/','localhost');
                     }
-                    header("Location: ../../index.php?success=Logat cu succes!");
+                    header("Location: ../../?success=Logat cu succes!");
                     exit();
                 }
                     else{
-                        header("Location: ../../index.php?error=Email sau parolă incorecte");
+                        header("Location: ../../?error=Email sau parolă incorecte");
                         exit();
                     }
             }
             else{
-                header("Location: ../../index.php?error=Email sau parolă incorecte");
+                header("Location: ../../?error=Email sau parolă incorecte");
                 exit();
             }
         }
     }
     else{
-        header("Location: ../../index.php?error=da");
+        header("Location: ../../?error=da");
         exit();
     }
 ?>

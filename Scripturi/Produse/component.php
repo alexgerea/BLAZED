@@ -23,7 +23,7 @@
 
     function cartElement($imagineprodus, $numeprodus,$pretprodus,$idprodus){
         $element= "          
-        <form action=\"cosdecumparaturi.php?action=remove&id=$idprodus\" method=\"post\" class=\"cart-items\">
+        <form action=\"cosdecumparaturi?action=remove&id=$idprodus\" method=\"post\" class=\"cart-items\">
             <div class=\"product\">
                 <img src=\"$imagineprodus\">
                 <div class=\"product-info\">

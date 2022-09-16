@@ -3,7 +3,7 @@
     if(isset($_POST['search']))
     {
         $search=$_POST['search'];
-        header("Location: produse.php?search=$search");
+        header("Location: produse?search=$search");
     }
 ?>
 <!DOCTYPE html>
@@ -26,12 +26,12 @@
     </head>
     <body>
     <header>
-            <a href="../index.php"><img class="logo" src="../Imagini/Logo/BLAZED.svg"></a>
+            <a href="../"><img class="logo" src="../Imagini/Logo/BLAZED.svg"></a>
             <ul class="navigation">
-                <li><a href="produse.php">Calculatoare</a></li>
-                <li><a href="produse.php?categorie=Periferice">Periferice</a></li>
-                <li><a href="desprenoi.php">Despre Noi</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="produse">Calculatoare</a></li>
+                <li><a href="produse?categorie=Periferice">Periferice</a></li>
+                <li><a href="desprenoi">Despre Noi</a></li>
+                <li><a href="contact">Contact</a></li>
             </ul>
             <div class="icons">
                 <div class="dropdown" data-dropdown>
@@ -52,11 +52,11 @@
                             <?php if(isset($_SESSION['id']) && isset($_SESSION['email'])) {?>
                                 <div class="logged-in-wrap">
                                     <div class="login-text">Salut, <?php echo $_SESSION['prenume'];?></div>
-                                    <div class="logout-link"><a href="../Pagini/administrarecont.php">Administrare cont</a></div>
-                                    <div class="logout-link"><a href="../Scripturi/Login/logout.php">Logout</a></div>
+                                    <div class="logout-link"><a href="../Pagini/administrarecont">Administrare cont</a></div>
+                                    <div class="logout-link"><a href="../Scripturi/Login/logout">Logout</a></div>
                                 </div>
                             <?php } else {?>
-                            <form class="login-form" action="../Scripturi/Login/login.php" method="post">
+                            <form class="login-form" action="../Scripturi/Login/login" method="post">
                                 <div class="login-title">Autentificare</div>
                                 <?php if(isset($_GET['error'])){ ?>
                                     <p class="error"><?php echo $_GET['error'];?></p>
@@ -73,13 +73,13 @@
                                 <input type="password" name="password" id="password">
                                 <div class="remember"><input type="checkbox" name="remember" id="remember"><label for="remember">Ține-mă minte</label></div>
                                 <button type="submit" class="startexploring">Login</button>
-                                <div class="register-link"><a href="../Pagini/inregistrare.php">Înregistrare</a></div>
+                                <div class="register-link"><a href="../Pagini/inregistrare">Înregistrare</a></div>
                             </form>
                             <?php } ?>
                         </div>
                     </div>
                 </div>
-                <?php if(isset($_SESSION['id'])) echo "<a href=cosdecumparaturi.php>"?>
+                <?php if(isset($_SESSION['id'])) echo "<a href=cosdecumparaturi>"?>
                 <div class="dropdown" data-dropdown>
                     <button class="link" data-dropdown-button><i style="pointer-events:none" class="fa-solid fa-cart-shopping"></i></button>
                     <div class="dropdown-menu cart">
@@ -87,7 +87,7 @@
                             <div class="shopinfo">
                                 <div class="shop-title">Coșul de cumpărături</div>
                                 <div class="shoptxt"><p>Nu sunteți logat!</p></div>
-                                <button class="startexploring"><a href="desprenoi.php?alert=Introduceți datele">Login</a></button>
+                                <button class="startexploring"><a href="desprenoi?alert=Introduceți datele">Login</a></button>
                             </div>
                         <?php }else{?>
                             <div class="shoptxt"><p>Către cumpărături...</p></div>
@@ -118,7 +118,7 @@
             De asemenea, suntem susținători ai schimbării pentru perfecționare, și așteptăm
             sugestii de la clienții noștri pe secțiunea de contact.
         </p>
-        <div class="contact"><a href="../Pagini/contact.php"><button>Contact</button></a></div>
+        <div class="contact"><a href="../Pagini/contact"><button>Contact</button></a></div>
         <footer>
             <div class="footer-content">
                 <img class="blazedest" src="../Imagini/Logo/BLAZED EST 2020 LOGO.svg">

@@ -4,7 +4,7 @@
     if(isset($_POST['search']))
     {
         $search=$_POST['search'];
-        header("Location: Pagini/produse.php?search=$search");
+        header("Location: Pagini/produse?search=$search");
     }
     ?>
 <!DOCTYPE html>
@@ -25,12 +25,12 @@
     </head>
     <body>
         <header>
-            <a href="index.php"><img class="logo" src="Imagini/Logo/BLAZED.svg"></a>
+            <a href="index"><img class="logo" src="Imagini/Logo/BLAZED.svg"></a>
             <ul class="navigation">
-                <li><a href="Pagini/produse.php">Calculatoare</a></li>
-                <li><a href="Pagini/produse.php?categorie=Periferice">Periferice</a></li>
-                <li><a href="Pagini/desprenoi.php">Despre Noi</a></li>
-                <li><a href="Pagini/contact.php">Contact</a></li>
+                <li><a href="Pagini/produse">Calculatoare</a></li>
+                <li><a href="Pagini/produse?categorie=Periferice">Periferice</a></li>
+                <li><a href="Pagini/desprenoi">Despre Noi</a></li>
+                <li><a href="Pagini/contact">Contact</a></li>
             </ul>
             <div class="icons">
                 <div class="dropdown" data-dropdown>
@@ -57,11 +57,11 @@
                                         <p class="alert"><?php echo $_GET['alert'];?></p>
                                     <?php }?>
                                     <div class="login-text">Salut, <?php echo $_SESSION['prenume'];?></div>
-                                    <div class="logout-link"><a href="Pagini/administrarecont.php">Administrare cont</a></div>
-                                    <div class="logout-link"><a href="Scripturi/Login/logout.php">Logout</a></div>
+                                    <div class="logout-link"><a href="Pagini/administrarecont">Administrare cont</a></div>
+                                    <div class="logout-link"><a href="Scripturi/Login/logout">Logout</a></div>
                                 </div>
                             <?php } else {?>
-                            <form class="login-form" action="Scripturi/Login/login.php" method="post">
+                            <form class="login-form" action="Scripturi/Login/login" method="post">
                                 <div class="login-title">Autentificare</div>
                                 <?php if(isset($_GET['error'])){ ?>
                                     <p class="error"><?php echo $_GET['error'];?></p>
@@ -78,13 +78,13 @@
                                 <input type="password" name="password" id="password">
                                 <div class="remember"><input type="checkbox" name="remember" id="remember"><label for="remember">Ține-mă minte</label></div>
                                 <button type="submit" class="startexploring">Login</button>
-                                <div class="register-link"><a href="Pagini/inregistrare.php">Înregistrare</a></div>
+                                <div class="register-link"><a href="Pagini/inregistrare">Înregistrare</a></div>
                             </form>
                             <?php } ?>
                         </div>
                     </div>
                 </div>
-                <?php if(isset($_SESSION['id'])) echo "<a href=Pagini/cosdecumparaturi.php>"?>
+                <?php if(isset($_SESSION['id'])) echo "<a href=Pagini/cosdecumparaturi>"?>
                 <div class="dropdown" data-dropdown>
                     <button class="link" data-dropdown-button><i style="pointer-events:none" class="fa-solid fa-cart-shopping"></i></button>
                     <div class="dropdown-menu cart">
@@ -92,7 +92,7 @@
                             <div class="shopinfo">
                                 <div class="shop-title">Coșul de cumpărături</div>
                                 <div class="shoptxt"><p>Nu sunteți logat!</p></div>
-                                <button class="startexploring"><a href="index.php?alert=Introduceți datele">Login</a></button>
+                                <button class="startexploring"><a href="index?alert=Introduceți datele">Login</a></button>
                             </div>
                         <?php }else{?>
                             <div class="shoptxt"><p>Către cumpărături...</p></div>
@@ -114,7 +114,7 @@
                         <h1>Blaze them <div class="selected">good</div></h1>
                     </div>
                     <p class="hero-paragraph">Explorează acum cele mai noi PC-uri de tip Workstation, special gândite pentru task-uri intensive și Gaming.</p>
-                    <a href="Pagini/produse.php"><button class="startexploring">Start exploring now</button></a>
+                    <a href="Pagini/produse"><button class="startexploring">Start exploring now</button></a>
                 </div>
 
                 <div class="right">
@@ -128,20 +128,20 @@
                     <div class="prod"
                     style="background-image:url('Imagini/Produse/Prezentare Produse/PC Gaming.jpg');">
                         <div class="prodextext">
-                        <a href="Pagini/produse.php?categorie=PC%20Gaming"><button class="startexploring">PC Gaming</button></a>
+                        <a href="Pagini/produse?categorie=PC%20Gaming"><button class="startexploring">PC Gaming</button></a>
                         </div>
                     </div>
                     <div class="prod"
                     style="background-image:url('Imagini/Produse/Prezentare Produse/PC Office.jpg');">
                         <div class="prodextext">
-                        <a href="Pagini/produse.php?categorie=PC%20Office"><button class="startexploring">PC Office</button></a>
+                        <a href="Pagini/produse?categorie=PC%20Office"><button class="startexploring">PC Office</button></a>
                         </div>
                     </div>
-                <a href="Pagini/produse.php?categorie=Periferice">
+                <a href="Pagini/produse?categorie=Periferice">
                     <div class="prod"
                     style="background-image:url('Imagini/Produse/Prezentare Produse/Periferice.jpg');">
                         <div class="prodextext">
-                        <a href="Pagini/produse.php?categorie=Periferice"><button class="startexploring">Periferice</button></a>
+                        <a href="Pagini/produse?categorie=Periferice"><button class="startexploring">Periferice</button></a>
                         </div>
                     </div>
                 </a>
@@ -150,7 +150,7 @@
         <div class="prodcontainercanvas">
             <div class="prodcontainertext">Recomandarile Noastre:</div>
             <div class="prodcontainer">
-                <a href="Pagini/produse.php?search=PC%20HP%20Pavilion">
+                <a href="Pagini/produse?search=PC%20HP%20Pavilion">
                     <div class="box">
                         <div class="image">
                             <img src="Imagini/Produse/Prezentare Produse/PC 1.png">
@@ -164,7 +164,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="Pagini/produse.php?search=PC%20Serioux%20pwd.">
+                <a href="Pagini/produse?search=PC%20Serioux%20pwd.">
                     <div class="box">
                         <div class="image">
                             <img src="Imagini/Produse/Prezentare Produse/PC 2.png">
@@ -178,7 +178,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="Pagini/produse.php?search=Laptop%20ASUS%20/%20Ryzen%205">
+                <a href="Pagini/produse?search=Laptop%20ASUS%20/%20Ryzen%205">
                     <div class="box">
                         <div class="image">
                             <img src="Imagini/Produse/Prezentare Produse/PC 3.png">

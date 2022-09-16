@@ -12,7 +12,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['nume'])){
         $pass = $_POST['passwordf'];
 
         if(empty($pass)){
-            header("Location: ../../Pagini/stergecont.php?errorf=Introduceți parola...");
+            header("Location: ../../Pagini/stergecont?errorf=Introduceți parola...");
             exit();
         }
         else
@@ -31,21 +31,21 @@ if(isset($_SESSION['id']) && isset($_SESSION['nume'])){
                 $result2 = mysqli_query($connection,$sql2);
                 session_unset();
                 session_destroy();
-                header("Location: ../../index.php?alert=Contul a fost sters!");
+                header("Location: ../../?alert=Contul a fost sters!");
                 exit();
             }else{
-                header("Location: ../../Pagini/stergecont.php?errorf=Parola nu este corecta...");
+                header("Location: ../../Pagini/stergecont?errorf=Parola nu este corecta...");
                 exit();
             }
         }
     }
     else{
-        header("Location: ../../Pagini/stergecont.php?errorf=Introduceti parola...");
+        header("Location: ../../Pagini/stergecont?errorf=Introduceti parola...");
         exit();
     }
 }
 else{
-    header("Location: ../../Pagini/stergecont.php?errorf=da");
+    header("Location: ../../Pagini/stergecont?errorf=da");
     exit();
 }
 ?>

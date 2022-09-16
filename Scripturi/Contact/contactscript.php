@@ -15,13 +15,13 @@ session_start();
             $rating=validate($_POST['ratingc']);
 
             if(empty($mail)){
-                header("Location: ../../Pagini/contact.php?errorf=Introduceti emailul...");
+                header("Location: ../../Pagini/contact?errorf=Introduceti emailul...");
                 exit();
             }else if(empty($categorie)){
-                header("Location: ../../Pagini/contact.php?errorf=Introduceti categoria..");
+                header("Location: ../../Pagini/contact?errorf=Introduceti categoria..");
                 exit();
             }else if(empty($mesaj)){
-                header("Location: ../../Pagini/contact.php?errorf=Introduceti mesajul..");
+                header("Location: ../../Pagini/contact?errorf=Introduceti mesajul..");
                 exit();
             }else{
                 $mesajfinal="EMAIL: " . $mail . "\nCATEGORIE: ". $categorie . "\nMESAJ: " . $mesaj . "\nRATING: ". $rating . "\n\n";
@@ -31,7 +31,7 @@ session_start();
                 fwrite($fisier,$mesajfinal);
                 fclose($fisier);
 
-                header("Location: ../../index.php?success=Mesajul a fost transmis cu succes!");
+                header("Location: ../../?success=Mesajul a fost transmis cu succes!");
                 exit();
             }
         }

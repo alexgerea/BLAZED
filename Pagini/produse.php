@@ -7,7 +7,7 @@
     if(isset($_POST['add'])){
         if(!isset($_SESSION['id']))
         {
-            header("Location: produse.php?alert=Trebuie sa fiti logat pentru a adauga la cos!");
+            header("Location: produse?alert=Trebuie sa fiti logat pentru a adauga la cos!");
             exit();
         }
         // print_r($_POST['idprodus']);
@@ -17,7 +17,7 @@
             // print_r($id_item_lista);
 
             if(in_array($_POST['idprodus'],$id_item_lista)){
-               header("Location: produse.php?alert=Produsul este deja in cos!");
+               header("Location: produse?alert=Produsul este deja in cos!");
             }
             else{
                 $count = count($_SESSION['cart']);
@@ -27,7 +27,7 @@
 
                 $_SESSION['cart'][$count] = $item_array;
                 // print_r($_SESSION['cart']);
-                header("Location: produse.php?success=Produsul a fost adaugat!");
+                header("Location: produse?success=Produsul a fost adaugat!");
             }
         }else{
             $item_array = array(
@@ -37,14 +37,14 @@
             // Crearea unei noi sesiuni
             $_SESSION['cart'][0] = $item_array;
             //print_r($_SESSION['cart']);
-            header("Location: produse.php?success=Produsul a fost adaugat!");
+            header("Location: produse?success=Produsul a fost adaugat!");
         }
     }
 
     if(isset($_POST['search']))
     {
         $search=$_POST['search'];
-        header("Location: produse.php?search=$search");
+        header("Location: produse?search=$search");
     }
 ?>
 <!DOCTYPE html>
@@ -68,12 +68,12 @@
     </head>
     <body>
     <header>
-            <a href="../index.php"><img class="logo" src="../Imagini/Logo/BLAZED.svg"></a>
+            <a href="../"><img class="logo" src="../Imagini/Logo/BLAZED.svg"></a>
             <ul class="navigation">
-                <li><a href="produse.php">Calculatoare</a></li>
-                <li><a href="produse.php?categorie=Periferice">Periferice</a></li>
-                <li><a href="desprenoi.php">Despre Noi</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="produse">Calculatoare</a></li>
+                <li><a href="produse?categorie=Periferice">Periferice</a></li>
+                <li><a href="desprenoi">Despre Noi</a></li>
+                <li><a href="contact">Contact</a></li>
             </ul>
             <div class="icons">
                 <div class="dropdown" data-dropdown>
@@ -103,11 +103,11 @@
                                         <p class="alert"><?php echo $_GET['alert'];?></p>
                                     <?php } ?>
                                     <div class="login-text">Salut, <?php echo $_SESSION['prenume'];?></div>
-                                    <div class="logout-link"><a href="../Pagini/administrarecont.php">Administrare cont</a></div>
-                                    <div class="logout-link"><a href="../Scripturi/Login/logout.php">Logout</a></div>
+                                    <div class="logout-link"><a href="../Pagini/administrarecont">Administrare cont</a></div>
+                                    <div class="logout-link"><a href="../Scripturi/Login/logout">Logout</a></div>
                                 </div>
                             <?php } else {?>
-                            <form class="login-form" action="../Scripturi/Login/login.php" method="post">
+                            <form class="login-form" action="../Scripturi/Login/login" method="post">
                                 <div class="login-title">Autentificare</div>
                                 <?php if(isset($_GET['error'])){ ?>
                                     <p class="error"><?php echo $_GET['error'];?></p>
@@ -124,13 +124,13 @@
                                 <input type="password" name="password" id="password">
                                 <div class="remember"><input type="checkbox" name="remember" id="remember"><label for="remember">Ține-mă minte</label></div>
                                 <button type="submit" class="startexploring">Login</button>
-                                <div class="register-link"><a href="../Pagini/inregistrare.php">Înregistrare</a></div>
+                                <div class="register-link"><a href="../Pagini/inregistrare">Înregistrare</a></div>
                             </form>
                             <?php } ?>
                         </div>
                     </div>
                 </div>
-                <?php if(isset($_SESSION['id'])) echo "<a href=../Pagini/cosdecumparaturi.php>"?>
+                <?php if(isset($_SESSION['id'])) echo "<a href=../Pagini/cosdecumparaturi>"?>
                 <div class="dropdown" data-dropdown>
                     <button class="link" data-dropdown-button><i style="pointer-events:none" class="fa-solid fa-cart-shopping"></i></button>
                     <div class="dropdown-menu cart">
@@ -138,7 +138,7 @@
                             <div class="shopinfo">
                                 <div class="shop-title">Coșul de cumpărături</div>
                                 <div class="shoptxt"><p>Nu sunteți logat!</p></div>
-                                <button class="startexploring"><a href="../Pagini/produse.php?alert=Introduceți datele">Login</a></button>
+                                <button class="startexploring"><a href="../Pagini/produse?alert=Introduceți datele">Login</a></button>
                             </div>
                         <?php }else{?>
                             <div class="shoptxt"><p>Către cumpărături...</p></div>

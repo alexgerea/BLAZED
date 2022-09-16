@@ -10,5 +10,5 @@
     setcookie("prenb",null,-1,'/','localhost');
     setcookie("numeb",null,-1,'/','localhost');
     setcookie("idb",null,-1,'/','localhost');
-    header("Location: ../../index.php?alert=Delogat cu succes");
+    header("Location: ../../?alert=Delogat cu succes");
 ?>
